@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCraft - Drag & Drop Website Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    <span>WebCraft</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="device-selector">
+                    <button class="device-btn active" data-device="desktop">
+                        <i class="fas fa-desktop"></i>
+                    </button>
+                    <button class="device-btn" data-device="tablet">
+                        <i class="fas fa-tablet-alt"></i>
+                    </button>
+                    <button class="device-btn" data-device="mobile">
+                        <i class="fas fa-mobile-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-secondary" id="previewBtn">
+                    <i class="fas fa-eye"></i>
+                    Preview
+                </button>
+                <button class="btn btn-primary" id="exportBtn">
+                    <i class="fas fa-download"></i>
+                    Export
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Elements</h3>
+                </div>
+                <div class="elements-panel">
+                    <div class="element-category">
+                        <h4>Basic Elements</h4>
+                        <div class="element-grid">
+                            <div class="element-item" draggable="true" data-type="text">
+                                <i class="fas fa-font"></i>
+                                <span>Text</span>
+                            </div>
+                            <div class="element-item" draggable="true" data-type="heading">
+                                <i class="fas fa-heading"></i>
+                                <span>Heading</span>
+                            </div>
+                            <div class="element-item" draggable="true" data-type="image">
+                                <i class="fas fa-image"></i>
+                                <span>Image</span>
+                            </div>
+                            <div class="element-item" draggable="true" data-type="button">
+                                <i class="fas fa-mouse-pointer"></i>
+                                <span>Button</span>
+                            </div>
+                            <div class="element-item" draggable="true" data-type="container">
+                                <i class="fas fa-square"></i>
+                                <span>Container</span>
+                            </div>
+                            <div class="element-item" draggable="true" data-type="divider">
+                                <i class="fas fa-minus"></i>
+                                <span>Divider</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Canvas Area -->
+            <main class="canvas-area">
+                <div class="canvas-container">
+                    <div class="canvas" id="canvas">
+                        <div class="canvas-placeholder">
+                            <i class="fas fa-mouse-pointer"></i>
+                            <h3>Start Building</h3>
+                            <p>Drag elements from the sidebar to start creating your website</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Properties Panel -->
+            <aside class="properties-panel" id="propertiesPanel">
+                <div class="properties-header">
+                    <h3>Properties</h3>
+                    <button class="close-properties" id="closeProperties">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="properties-content" id="propertiesContent">
+                    <div class="no-selection">
+                        <i class="fas fa-mouse-pointer"></i>
+                        <p>Select an element to edit its properties</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Preview</h3>
+                <button class="modal-close" id="closePreview">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe id="previewFrame" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drop Indicator -->
+    <div class="drop-indicator" id="dropIndicator"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
