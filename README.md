@@ -6,7 +6,7 @@ A professional, feature-rich drag-and-drop website builder built with pure HTML,
 
 ## 🚀 Live Demo
 
-**Live Application:** [[Your deployment URL here]](https://web-craft-drag-drop-website-builder.vercel.app/)
+**Live Application:** [https://web-craft-drag-drop-website-builder.vercel.app/]
 **Demo Video:** [https://drive.google.com/file/d/1ymDviy6Gfe7TfAO49QupTIjsiZG8X6e7/view?usp=sharing]
 
 ## ✨ Features
